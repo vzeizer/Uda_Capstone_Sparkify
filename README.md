@@ -20,7 +20,7 @@ Exploratory data analysis, feature engineering and machine learning modeling wil
 
 # Results and Blog
 
-A detailed discussion of the results presented here are shown in this medium post.
+A detailed discussion of the results presented here is shown in this [medium post](https://vagnerzeizer.medium.com/sparkify-using-pyspark-to-predict-customer-churn-10060cff9d71).
 
 
 # Files Description:
