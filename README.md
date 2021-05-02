@@ -18,9 +18,31 @@ The main goal of this project is to create a machine learning model to predict w
 If the machine learning model is capable of predicting with high reliability which customer is likely to churn, the same model applied over millions of customers should be able to save millions of dollars for (the fictitious) Sparkify by contacting these customers and offering them a discount, potentially avoiding the predicted churns to take place. 
 Exploratory data analysis, feature engineering and machine learning modeling will come in handy to find a good approach to solve this problem in PySpark.
 
-# Results and Blog
+# Summary of the Results and Blog
 
 A detailed discussion of the results presented here is shown in this [medium post](https://vagnerzeizer.medium.com/sparkify-using-pyspark-to-predict-customer-churn-10060cff9d71).
+
+The best model, the Random Forest, presents a quite good result on the training data (0.98796) and test data(0.98829), with the best number of trees equals 50 and maximum depth equals 15. 
+More trees or a larger maximum depth do not make the algorithm perform better. 
+These values are quite good for a Random Forest classifier and train relatively faster. 
+Cross validations with K=2 or K=3 were run and similar results were found. 
+Additionally, the top 3 features of this model make very sense to be responsible for customer churn, as previously discussed. 
+Moreover, Random Forest is suitable for large datasets.
+
+Random Forest is my current choice as to be the best machine learning model for this problem because of its easy understanding due to its nature on decision trees and relatively fast training speed. 
+Although more complex than decision trees, Random Forest is not prone to overfit in the test data. 
+Moreover, the power and scalability of Random Forest for massive data makes it proper to run it in clusters such as Amazon Web Services, or IBM Cloud.
+
+
+# Main Conclusions
+
+The EDA results have pointed out that a small fraction of the customers churn and more females churn than males. 
+Locations, itemInSessions, userAgent were investigated and customer churn can be minimized by properly handling these features.
+The current machine learning model results have shown that one can consider Random Forest as the most appropriate one for this problem. 
+This model has a great f1-score on the test data, therefore it probably would save money millions of dollars for Sparkify when applied over millions of users when trying to minimize customer churn. 
+The most predictive columns of this model are 'userAgent', 'itemInSession', and 'ts' (time). 
+This is quite interesting since the two first features were explored are very related to churn.
+So, working on these features is really important and deserves strong attention from the (fictitious) enterprise Sparkify.
 
 
 # Files Description:
